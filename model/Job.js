@@ -1,0 +1,79 @@
+import { ObjectId } from "mongodb";
+import mongoose from "mongoose";
+
+const jobSchema = new mongoose.Schema({
+    email:{
+        type:String,
+        required:true
+    },
+    companyName:{
+        type:String,
+        required:true
+    },
+    fullName:{
+        type:String,
+        required:true
+    },
+    phoneNumber:{
+        type:String,
+        required:true
+    },
+    jobTitle:{
+        type:String,
+        required:true
+    },
+    location:{
+        type:String,
+        required:true
+    },
+    jobType:{
+        type:String,
+        required:true
+    },
+    schedule:{
+        type:String,
+        required:true
+    },
+    startingDate:{
+        type:String
+    },
+    numberOfOpertunity:{
+        type:String, 
+    },
+    minPay:{
+        type:Number
+    },
+    maxPay:{
+        type:Number
+    },
+    supplementalPay:{
+        type:Array,
+    },
+    benafits:{
+        type:Array, 
+    },
+    minExperience:{
+        type:Number
+    },
+    maxExperience:{
+        type:Number
+    },
+    description:{
+        type:String,
+        requried:true
+    },
+    createdBy:ObjectId,
+    isSaved:{
+        type:Array,
+        default:[]
+    },
+    appliedCount:{
+        type:Number,
+        default:0
+    }
+},
+{
+    timestamps:true
+});
+
+export default mongoose.model("Jobs",jobSchema);
